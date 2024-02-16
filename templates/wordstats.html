@@ -11,4 +11,12 @@
     {% if average_length is not none %}
         <p>Average word length: {{ average_length }}</p>
     {% endif %}
+
+    {%  if word_count is not none %}
+        <p>Word count is: {{ word_count }}</p>
+    {% endif %}
+
+    {%  if char_count is not none %}
+        <p>Character count is: {{ char_count }}</p>
+    {% endif %}
 {% endblock %}
