@@ -21,6 +21,7 @@ def calc():
 
     return render_template('calc.html', current_value=current_value)
 
+
 @app.route('/wordstats', methods=['GET', 'POST'])
 def wordstatsindex():
     if request.method == 'POST':
@@ -28,9 +29,11 @@ def wordstatsindex():
         average_length = wordstats.average_length(user_string)
         word_count = wordstats.word_count(user_string)
         char_count = wordstats.char_count(user_string)
-        return render_template('wordstats.html', average_length=average_length, word_count=word_count, char_count=char_count)
+        longest_word = wordstats.longest_word(user_string)
+        return render_template('wordstats.html', average_length=average_length, longest_word=longest_word, word_count=word_count, char_count=char_count)
     else:
         return render_template('wordstats.html', average_length=None, word_count=None, char_count=None)
+
 
 if __name__ == '__main__':
     app.run()
