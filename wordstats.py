@@ -7,6 +7,23 @@ def average_length(user_string):
     return avg
 
 
+
+def word_count(user_string):
+    words = user_string.split()
+    if words:
+        length = len(words)
+    else:
+        length = 0
+    return length
+
+
+def char_count(user_string):
+    words = user_string.split()
+    count = 0
+    for word in words:
+        count += len(word)
+    return count
+
 def longest_word(user_string):
     words = user_string.split()
     if words:
